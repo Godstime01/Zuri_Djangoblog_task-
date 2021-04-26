@@ -8,6 +8,7 @@ django = "*"
 whitenoise = "==5.1.0"
 install = "*"
 django-crispy-forms = "*"
+gunicorn = "*"
 
 [dev-packages]
 
