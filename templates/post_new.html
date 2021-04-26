@@ -8,14 +8,16 @@
 </head>
 <body>
     {%extends 'base.html' %}
-
-    {% block content %}
+    {%load crispy_forms_tags %}
+    <div class="container">
+        {% block content %}
         <h3>New Blog Post</h3>
         <form action="#", method="POST">
             {% csrf_token %}
-            {{form.as_p}}
+            {{form| crispy}}
             <input type="submit", value="Save">
         </form>
     {% endblock content %}
+    </div>
 </body>
 </html>

@@ -6,8 +6,10 @@ from .views import (
     BlogDeleteView,
     BlogUpdateView
     )
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+
     path('post/<int:pk>/edit/',BlogUpdateView.as_view(), name = 'post_edit'),
     path('post/<int:pk>/delete/', BlogDeleteView.as_view(), name='post_delete'),
     path('post/new/', BlogCreateView.as_view(), name='post_new'),
