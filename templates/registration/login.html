@@ -15,7 +15,7 @@
                 {% csrf_token %}
                 {{form|crispy}}
                 <input type="submit", value="Login", class='btn btn-info'>
-                <p><a href="http://127.0.0.1:8000/accounts/password_reset/">Forgotten password?</a></p>
+                <p><a href="{% url 'password_reset' %}">Forgotten password?</a></p>
             </form>
         </div>
     {%endblock content%}
