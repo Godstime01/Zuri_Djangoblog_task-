@@ -22,7 +22,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
     fields = ['title','body']
 
     def form_valid(self, form):
-        form.instanc.author = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 class BlogUpdateView(UserPassesTestMixin, UpdateView):
