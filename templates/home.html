@@ -12,12 +12,19 @@
     {%block content%}
     
     {% for post in object_list %}
-      <div class="post-entry">
-          <h2><a href='{% url "post_detail" post.pk %}'>{{post.title}}</a></h2>
-          <p>{{post.body}}</p>
-          <a href="{% url 'post_edit' post.pk %}">Edit post</a>
-          <a href="{% url 'post_delete' post.pk %}">Delete post</a>  
-      </div>    
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h2><a href='{% url "post_detail" post.pk %}'>{{post.title}}</a></h2>
+        </div>
+        <div class="card-body">
+            <p class='card-text text-dark '>{{post.body}}</p>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Edit post</a>
+            <a href="{% url 'post_delete' post.pk %}" class="btn btn-primary">Delete post</a>
+        </div>
+      </div> 
     {% endfor %}
     {% endblock content%}
 </body>

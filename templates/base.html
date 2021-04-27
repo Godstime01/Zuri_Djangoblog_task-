@@ -41,15 +41,17 @@
     </div>
   </nav>
 
-  {% if user.is_authenticated %}
+  <div class="container">
+    {% if user.is_authenticated %}
     <p>Hi {{user.username}}</p>
     <p><a href="{% url 'logout' %}">Log out</a></p>
-  {% else %}
+    {% else %}
     <p>You are not logged in <a href="{% url 'login' %}">login here</a></p>
-  {% endif %}
-  {% block content %}
+    {% endif %}
+    {% block content %}
 
-  {% endblock content %}
+    {% endblock content %}
+  </div>
 
   <!-- bootstrap js -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
